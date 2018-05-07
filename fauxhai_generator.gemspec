@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = "Spin up systems in AWS and generate new Fauxhai dumps"
   spec.description   = "Spin up systems in AWS and generate new Fauxhai dumps"
   spec.homepage      = "http://www.github.com/chefspec/fauxhai_generator"
-  spec.license       = "Apache-2.0"
+  spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
