@@ -1,6 +1,9 @@
 #!/usr/bin/env ruby
 
 $LOAD_PATH.unshift File.expand_path("../lib", __dir__)
-require "fauxhai_generator"
+
+require "fauxhai_generator/version"
+require "fauxhai_generator/runner"
+require "fauxhai_generator/config"
 
 FauxhaiGenerator::Runner.new.run

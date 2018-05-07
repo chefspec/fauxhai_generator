@@ -1,29 +1,12 @@
-require "fauxhai_generator/version"
 require "train"
 require "aws-sdk"
-require "yaml"
-require 'json'
-require 'deepsort'
+require "json"
+require "deepsort"
 
 module FauxhaiGenerator
   class Runner
-    # fail if things aren't in order
-    def readiness_check
-      raise "You must run fauxhai_generator from the root of the fauxhai repository!" unless Dir.exist?("lib/fauxhai/platforms")
-      raise "You must pass in the name of the AWS key_pair and path to the private key. Example: fauxhai_generator tsmith ~/.ssh/id_rsa" unless ARGV[0] && ARGV[1]
-
-
-      #raise "Could not find config.yml in the current directory!" unless File.exist?("config.yml")
-    end
-
-    # the config in config.yml mixed in with the key_name/key_path passed via CLI
     def config
-      @config ||= begin
-        yaml = YAML.safe_load(File.open(ARGV[2]))
-        yaml["aws"]["key_name"] = ARGV[0]
-        yaml["aws"]["key_path"] = ARGV[1]
-        yaml
-      end
+      @config ||= FauxhaiGenerator::Config.new.config
     end
 
     # ec2 client object
@@ -151,8 +134,6 @@ module FauxhaiGenerator
     end
 
     def run
-      readiness_check
-
       # Spin up each platform release listed in the config and save the fauxhai output
       platforms.each do |plat|
         releases(plat).each do |rel|
