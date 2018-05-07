@@ -84,6 +84,12 @@ module FauxhaiGenerator
       )
     end
 
+    def terminate_instance(id)
+      puts "Terminating instance #{id}"
+
+      resource.instance(id).terminate
+    end
+
     # wait until the instance is ready and print out messagin while we wait
     def wait_until_ready(instance)
       client.wait_until(:instance_status_ok, instance_ids: [instance.first.id]) do |w|
@@ -156,6 +162,8 @@ module FauxhaiGenerator
 
           dump = gather_fauxhai_data(instance_dns_name(instance.first.id), plat)
           write_data(plat, rel, dump)
+
+          terminate_instance(instance.first.id)
         end
       end
     end
