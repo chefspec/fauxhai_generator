@@ -66,7 +66,14 @@ module FauxhaiGenerator
         max_count: 1,
         key_name: config["aws"]["key_name"],
         instance_type: config["aws"]["instance_type"],
-        security_group_ids: [security_group_id]
+        security_group_ids: [security_group_id],
+        tag_specifications: [{
+          resource_type: "instance",
+          tags: [{
+            key: "creator",
+            value: "fauxhai_generator"
+          }]
+        }]
       )
     end
 
