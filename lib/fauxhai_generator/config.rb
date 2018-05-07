@@ -12,21 +12,24 @@ module FauxhaiGenerator
 
     # parse the command line options
     def options
+      # since optparse doesn't have a "required" flag we have to hack one on
+      ARGV << '-h' if ARGV.count < 6
+
       options = {}
       OptionParser.new do |opts|
         opts.banner = "Usage: fauxhai_generator [options]"
 
-        opts.on("-c", "--config FILE_PATH ", "fauxhai_generator config.yml file path.") do |n|
+        opts.on("-c", "--config FILE_PATH ", "fauxhai_generator config.yml file path. (required)") do |n|
           raise "The passed config file at #{n} does not exist!" unless File.exist?(n)
           options["config_file"] = n
         end
 
-        opts.on("-f", "--key-file FILE_PATH ", "The path to the key used to login to AWS instances.") do |n|
+        opts.on("-f", "--key-file FILE_PATH ", "The path to the key used to login to AWS instances. (required)") do |n|
           raise "The passed key file at #{n} does not exist!" unless File.exist?(n)
           options["key_path"] = n
         end
 
-        opts.on("-k", "--key_name KEYNAME ", "The name of the keypair to setup AWS instances with.") do |n|
+        opts.on("-k", "--key_name KEYNAME ", "The name of the keypair to setup AWS instances with. (required)") do |n|
           options["key_name"] = n
         end
 
