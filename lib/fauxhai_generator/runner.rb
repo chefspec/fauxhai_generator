@@ -49,10 +49,10 @@ module FauxhaiGenerator
             to_port: 22,
             ip_ranges: [
               {
-                cidr_ip: "0.0.0.0/0",
-              },
-            ],
-          },
+                cidr_ip: "0.0.0.0/0"
+              }
+            ]
+          }
         ]
       )
       create_security_group_result.group_id
