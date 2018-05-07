@@ -162,8 +162,6 @@ module FauxhaiGenerator
           wait_until_ready(instance)
 
           dump = gather_fauxhai_data(instance_dns_name(instance.first.id), plat)
-          require 'pry'
-          binding.pry
           write_data(plat, rel, dump)
         end
       end
