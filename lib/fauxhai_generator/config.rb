@@ -8,7 +8,7 @@ module FauxhaiGenerator
       @config = load_config
     end
 
-    attr_accessor :config
+    attr_reader :config
 
     # parse the command line options
     def options
