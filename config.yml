@@ -5,8 +5,6 @@ aws:
 # make sure the platform versions are actually strings
 platforms:
   ubuntu:
-    '12.04':
-      ami: 'ami-270f9747'
     '14.04':
       ami: 'ami-a523b4dd'
     '16.04':
