@@ -59,7 +59,9 @@ module FauxhaiGenerator
     end
 
     # sping up an instance given an AMI
-    def create_instance(ami)
+    def create_instance(ami, platform, release)
+      puts "Spinning up #{platform} #{release} AMI #{ami}"
+
       resource.create_instances(
         image_id: ami,
         min_count: 1,
@@ -72,7 +74,12 @@ module FauxhaiGenerator
           tags: [{
             key: "creator",
             value: "fauxhai_generator"
-          }]
+          },
+          {
+            key: "Name",
+            value: "fauxhai_generator #{platform} #{release}"
+          }
+          ]
         }]
       )
     end
@@ -144,9 +151,7 @@ module FauxhaiGenerator
       # Spin up each platform release listed in the config and save the fauxhai output
       platforms.each do |plat|
         releases(plat).each do |rel|
-          puts "Spinning up #{plat} #{rel} AMI #{ami(plat, rel)}"
-
-          instance = create_instance(ami(plat, rel))
+          instance = create_instance(ami(plat, rel), plat, rel)
           wait_until_ready(instance)
 
           dump = gather_fauxhai_data(instance_dns_name(instance.first.id), plat)
