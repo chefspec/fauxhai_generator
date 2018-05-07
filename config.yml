@@ -1,0 +1,18 @@
+aws:
+  region: 'us-west-2'
+  instance_type: 't2.micro'
+
+# make sure the platform versions are actually strings
+platforms:
+  ubuntu:
+    '14.04':
+      ami: 'ami-a523b4dd'
+    '16.04':
+      ami: 'ami-4e79ed36'
+    '18.04':
+      ami: 'ami-22741f5a'
+  amazon:
+    '2':
+      ami: 'ami-07eb707f'
+    '2018.03':
+      ami: 'ami-6b8cef13'
