@@ -5,10 +5,14 @@ aws:
 # make sure the platform versions are actually strings
 platforms:
   ubuntu:
+    '12.04':
+      ami: 'ami-270f9747'
     '14.04':
       ami: 'ami-a523b4dd'
     '16.04':
-      ami: 'ami-4e79ed36'
+      ami: 'ami-78d3ba00'
+    '17.10':
+      ami: 'ami-2192f559'
     '18.04':
       ami: 'ami-22741f5a'
   amazon:
@@ -16,3 +20,35 @@ platforms:
       ami: 'ami-07eb707f'
     '2018.03':
       ami: 'ami-6b8cef13'
+    '2017.03':
+      ami: 'ami-215dbe59'
+    '2017.09':
+      ami: 'ami-f64bdf8e'
+    '2016.09':
+      ami: 'ami-9e73ccfe'
+    '2016.03':
+      ami: 'ami-d8f704b8'
+    '2015.09':
+      ami: 'ami-42b15122'
+    '2015.03':
+      ami: 'ami-d1c5d1e1'
+  redhat:
+    '7.5':
+      ami: 'ami-28e07e50'
+    '7.4':
+      ami: 'ami-9fa343e7'
+    '7.3':
+      ami: 'ami-6f68cf0f'
+    '6.9':
+      ami: 'ami-d61a92b6'
+    '6.8':
+      ami: 'ami-6fb7450f'
+  suse:
+    '12.3':
+      ami: 'ami-6bc56f13'
+    '12.2':
+      ami: 'ami-974357ee'
+    '12.1':
+      ami: 'ami-61ad6501'
+    '11.4':
+      ami: 'ami-7eb31906'
