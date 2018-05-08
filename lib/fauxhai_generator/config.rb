@@ -35,7 +35,7 @@ module FauxhaiGenerator
 
         opts.on("-h", "--help", "Display fauxhai_generator options") do
           puts opts
-          exit
+          exit!
         end
       end.parse!
       options
