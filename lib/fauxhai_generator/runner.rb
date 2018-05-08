@@ -90,7 +90,7 @@ module FauxhaiGenerator
       resource.instance(id).terminate
     end
 
-    # wait until the instance is ready and print out messagin while we wait
+    # wait until the instance is ready and print out messaging while we wait
     def wait_until_ready(instance)
       client.wait_until(:instance_status_ok, instance_ids: [instance.first.id]) do |w|
         w.before_wait { puts "  Waiting for instance #{instance.first.id} to be ready" }
@@ -138,6 +138,44 @@ module FauxhaiGenerator
       Aws::EC2::Instance.new(id).public_dns_name
     end
 
+    # make sure we haven't left behind security groups or instances
+    def cleanup_aws
+      puts "Cleaning up any leftover security groups or instances before shutting down."
+
+      terminate_orphan_instances
+      delete_security_group
+    end
+
+    def terminate_orphan_instances
+      begin
+        # find any running / pending instances with the tag we assign
+        ids = client.describe_instances(filters:[
+          { name: "tag:creator", values: ['fauxhai_generator'] }
+          ]).reservations.collect { |i| i.instances[0].instance_id if %w(running pending).include?(i.instances[0].state.name) }.compact
+
+        return if ids.empty?
+
+        puts "Terminating instances: #{ids.join(',')}"
+        client.terminate_instances({ instance_ids: ids })
+
+        client.wait_until(:instance_terminated, instance_ids: ids) do |w|
+          w.before_wait { puts "  Waiting for instance termination to complete." }
+        end
+      rescue NoMethodError
+        # didn't find anything
+      end
+    end
+
+    def delete_security_group
+      begin
+        client.delete_security_group({ group_name: "fauxhai_generator"})
+      rescue Aws::EC2::Errors::InvalidGroupNotFound
+        # Nothing to delete. We're good
+      rescue Aws::EC2::Errors::DependencyViolation
+        puts "Could not delete the security group due to a resource still using it!"
+      end
+    end
+
     # sort everything that comes back to make future diffs easier
     # uses deepsort to make sorting the json easy
     def json_sort(data)
@@ -154,17 +192,21 @@ module FauxhaiGenerator
     end
 
     def run
-      # Spin up each platform release listed in the config and save the fauxhai output
-      platforms.each do |plat|
-        releases(plat).each do |rel|
-          instance = create_instance(ami(plat, rel), plat, rel)
-          wait_until_ready(instance)
+      begin
+        # Spin up each platform release listed in the config and save the fauxhai output
+        platforms.each do |plat|
+          releases(plat).each do |rel|
+            instance = create_instance(ami(plat, rel), plat, rel)
+            wait_until_ready(instance)
 
-          dump = gather_fauxhai_data(instance_dns_name(instance.first.id), plat)
-          write_data(plat, rel, dump)
+            dump = gather_fauxhai_data(instance_dns_name(instance.first.id), plat)
+            write_data(plat, rel, dump)
 
-          terminate_instance(instance.first.id)
+            terminate_instance(instance.first.id)
+          end
         end
+      ensure
+        cleanup_aws
       end
     end
   end
