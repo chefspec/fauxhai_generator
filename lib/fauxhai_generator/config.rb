@@ -13,7 +13,7 @@ module FauxhaiGenerator
     # parse the command line options
     def options
       # since optparse doesn't have a "required" flag we have to hack one on
-      ARGV << "-h" if ARGV.count < 6
+      ARGV << "-h" if (ARGV.count < 6 && !ARGV.include?('-h'))
 
       options = {}
       OptionParser.new do |opts|
