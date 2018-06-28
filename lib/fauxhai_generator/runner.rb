@@ -112,6 +112,8 @@ module FauxhaiGenerator
       case platform
       when "ubuntu"
         "ubuntu"
+      when "centos"
+        "centos"
       else
         "ec2-user"
       end
