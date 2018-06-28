@@ -129,7 +129,7 @@ module FauxhaiGenerator
 
       train = Train.create("ssh", host: ip, port: 22, user: user_name(plat), key_files: ARGV[1], auth_methods: ["publickey"], connection_retries: 10, connection_retry_sleep: 5, sudo: true)
       conn = train.connection
-      conn.run_command("curl -k https://www.chef.io/chef/install.sh | sudo bash --")
+      conn.run_command("curl -k https://www.chef.io/chef/install.sh | sudo sh --")
       conn.run_command("/opt/chef/embedded/bin/gem install fauxhai --no-ri --no-rdoc")
       dump = conn.run_command("/opt/chef/embedded/bin/fauxhai").stdout
       conn.close
