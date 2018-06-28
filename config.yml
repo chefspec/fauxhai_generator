@@ -1,23 +1,23 @@
 aws:
   region: 'us-west-2'
-  instance_type: 't2.micro'
+  instance_type: 't2.small'
 
 # make sure the platform versions are actually strings
 platforms:
   ubuntu:
     '14.04':
-      ami: 'ami-a523b4dd'
+      ami: 'ami-c59ce2bd'
     '16.04':
-      ami: 'ami-78d3ba00'
+      ami: 'ami-db710fa3'
     '17.10':
       ami: 'ami-2192f559'
     '18.04':
       ami: 'ami-22741f5a'
   amazon:
     '2':
-      ami: 'ami-07eb707f'
+      ami: 'ami-a9d09ed1'
     '2018.03':
-      ami: 'ami-6b8cef13'
+      ami: 'ami-e251209a'
     '2017.03':
       ami: 'ami-215dbe59'
     '2017.09':
