@@ -21,9 +21,14 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "aws-sdk-ec2"
+  spec.add_dependency "test-kitchen"
+  spec.add_dependency "kitchen-ec2"
   spec.add_dependency "deepsort"
-  spec.add_dependency "train-core"
+
+  # For ed25519 keys
+  spec.add_dependency "rbnacl", ">= 3.2", "< 5.0"
+  spec.add_dependency "rbnacl-libsodium"
+  spec.add_dependency "bcrypt_pbkdf", ">= 1.0", "< 2.0"
 
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
