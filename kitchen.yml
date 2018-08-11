@@ -40,9 +40,9 @@ platforms:
   - name: ubuntu-16.04
   - name: ubuntu-18.04
   - name: centos-6
-  - name: centos-7
+  - name: centos-7.4
     driver:
-      image_id: ami-b14ba7a7
+      image_id: ami-4bf3d731
   - name: debian-8.7
     driver:
       image_id: ami-b14ba7a7
@@ -64,3 +64,43 @@ platforms:
   - name: debian-9.5
     driver:
       image_id: ami-b4bfa7cb
+  - name: sles-11.4
+    driver:
+      image_id: ami-3881d042
+    transport:
+      username: ec2-user
+  - name: sles-12.1
+    driver:
+      image_id: ami-166efc01
+    transport:
+      username: ec2-user
+  - name: sles-12.2
+    driver:
+      image_id: ami-2ad5fd3c
+    transport:
+      username: ec2-user
+  - name: sles-12.3
+    driver:
+      image_id: ami-3c062943
+    transport:
+      username: ec2-user
+  # - name: opensuse-13.2
+  #   driver:
+  #     image_id: ami-3f093055
+  #   transport:
+  #     username: ec2-user
+  # - name: opensuse-42.1
+  #   driver:
+  #     image_id: ami-67aded0d
+  #   transport:
+  #     username: ec2-user
+  - name: opensuse-42.2
+    driver:
+      image_id: ami-b5314da3
+    transport:
+      username: ec2-user
+  - name: opensuse-42.3
+    driver:
+      image_id: ami-5eaf8124
+    transport:
+      username: ec2-user
