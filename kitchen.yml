@@ -1,5 +1,6 @@
 driver:
   name: ec2
+  region: us-east-1
 
 provisioner:
   name: fauxhai
@@ -40,4 +41,26 @@ platforms:
   - name: ubuntu-18.04
   - name: centos-6
   - name: centos-7
-  - name: debian-9
+    driver:
+      image_id: ami-b14ba7a7
+  - name: debian-8.7
+    driver:
+      image_id: ami-b14ba7a7
+  - name: debian-9.0
+    driver:
+      image_id: ami-5e203d48
+  - name: debian-9.1
+    driver:
+      image_id: ami-ac5e55d7
+  - name: debian-9.2
+    driver:
+      image_id: ami-71b7750b
+  - name: debian-9.3
+    driver:
+      image_id: ami-0dc82b70
+  - name: debian-9.4
+    driver:
+      image_id: ami-8c9bdaf3
+  - name: debian-9.5
+    driver:
+      image_id: ami-b4bfa7cb
