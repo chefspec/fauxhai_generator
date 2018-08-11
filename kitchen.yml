@@ -1,6 +1,5 @@
 driver:
   name: ec2
-  subnet_id: <%= ENV["SUBNET_ID"].to_json %>
 
 provisioner:
   name: fauxhai
@@ -9,12 +8,32 @@ verifier:
   name: dummy
 
 suites:
-- name: default
+  - name: default
 
 platforms:
-- name: ubuntu-14.04
-- name: ubuntu-16.04
-- name: ubuntu-18.04
-- name: centos-6
-- name: centos-7
-- name: debian-9
+  - name: amazon-2.0
+  - name: amazon-2012.09
+  - name: amazon-2013.09
+  - name: amazon-2014.03
+  - name: amazon-2014.09
+  - name: amazon-2015.03
+  - name: amazon-2015.09
+  - name: amazon-2016.03
+  - name: amazon-2016.09
+  - name: amazon-2017.03
+  - name: amazon-2017.09
+  - name: amazon-2018.03
+  - name: fedora-24
+  - name: fedora-25
+  - name: fedora-26
+  - name: fedora-27
+  - name: fedora-28
+  - name: rhel-5
+  - name: rhel-6
+  - name: rhel-7
+  - name: ubuntu-14.04
+  - name: ubuntu-16.04
+  - name: ubuntu-18.04
+  - name: centos-6
+  - name: centos-7
+  - name: debian-9
