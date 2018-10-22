@@ -84,16 +84,6 @@ platforms:
       image_id: ami-3c062943
     transport:
       username: ec2-user
-  # - name: opensuse-13.2
-  #   driver:
-  #     image_id: ami-3f093055
-  #   transport:
-  #     username: ec2-user
-  # - name: opensuse-42.1
-  #   driver:
-  #     image_id: ami-67aded0d
-  #   transport:
-  #     username: ec2-user
   - name: opensuse-42.2
     driver:
       image_id: ami-b5314da3
