@@ -4,6 +4,7 @@ driver:
 
 provisioner:
   name: fauxhai
+  channel: stable
 
 verifier:
   name: dummy
@@ -12,10 +13,8 @@ suites:
   - name: default
 
 platforms:
-  - name: amazon-2.0
-  - name: amazon-2012.09
-  - name: amazon-2013.09
-  - name: amazon-2014.03
+  - name: amazon2-2018
+  # don't add previous amazon releases as they're not supported by omnitruck as of 12.2018
   - name: amazon-2014.09
   - name: amazon-2015.03
   - name: amazon-2015.09
