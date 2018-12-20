@@ -12,6 +12,7 @@ verifier:
 suites:
   - name: default
 
+# note many of these AMIs require product subscriptions in AWS. you'll need to try to launch the same AMI via the GUI so you can agree to the subscription nonsense
 platforms:
   - name: amazon2-2018
   # don't add previous amazon releases as they're not supported by omnitruck as of 12.2018
@@ -28,7 +29,7 @@ platforms:
   - name: fedora-26
   - name: fedora-27
   - name: fedora-28
-  #- name: rhel-5
+  - name: fedora-29
   - name: rhel-6.8
   - name: rhel-6.9
   - name: rhel-7.2
@@ -42,6 +43,9 @@ platforms:
   - name: centos-7.4
     driver:
       image_id: ami-4bf3d731
+  - name: centos-7.5
+    driver:
+      image_id: ami-00f7c900d2e7133e1
   - name: debian-8.7
     driver:
       image_id: ami-b14ba7a7
