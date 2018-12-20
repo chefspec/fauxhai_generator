@@ -38,7 +38,7 @@ module Kitchen
         base_cmd = if windows_os?
           raise "todo"
         else
-          "/opt/chef/embedded/bin/gem install fauxhai --no-ri --no-rdoc"
+          "/opt/chef/embedded/bin/gem install fauxhai --no-document"
         end
         prefix_command(wrap_shell_code(sudo(base_cmd)))
       end
