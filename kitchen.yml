@@ -67,6 +67,9 @@ platforms:
   - name: debian-9.5
     driver:
       image_id: ami-b4bfa7cb
+  - name: debian-9.6
+    driver:
+      image_id: ami-0f4768a55eaaac3d7
   - name: sles-11.4
     driver:
       image_id: ami-3881d042
