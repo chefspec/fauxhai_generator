@@ -101,3 +101,25 @@ platforms:
       image_id: ami-5eaf8124
     transport:
       username: ec2-user
+  - name: oracle-6.8
+    driver:
+      image_id: ami-f1a2998a
+    transport:
+      username: clckwrk
+  - name: oracle-7.2
+    driver:
+      image_id: ami-73a29908
+    transport:
+      username: clckwrk
+  - name: oracle-7.3
+    driver:
+      image_id: ami-2ea29955
+    transport:
+      username: ec2-user
+    transport:
+      username: clckwrk
+  - name: oracle-7.4
+    driver:
+      image_id: ami-0c9c8d77
+    transport:
+      username: clckwrk
