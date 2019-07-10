@@ -29,11 +29,14 @@ platforms:
   #- name: fedora-30
   - name: rhel-6.8
   - name: rhel-6.9
-  - name: rhel-7.2
+  - name: rhel-6.10
+    transport:
+      username: ec2-user
   - name: rhel-7.3
   - name: rhel-7.4
   - name: rhel-7.5
   - name: rhel-7.6
+  - name: rhel-8.0
   - name: ubuntu-14.04
   - name: ubuntu-16.04
   - name: ubuntu-18.04
