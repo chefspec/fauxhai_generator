@@ -22,12 +22,11 @@ platforms:
   - name: amazon-2017.03
   - name: amazon-2017.09
   - name: amazon-2018.03
-  - name: fedora-24
-  - name: fedora-25
   - name: fedora-26
   - name: fedora-27
   - name: fedora-28
   - name: fedora-29
+  #- name: fedora-30
   - name: rhel-6.8
   - name: rhel-6.9
   - name: rhel-7.2
