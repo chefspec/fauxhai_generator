@@ -21,14 +21,13 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "test-kitchen"
+  spec.add_dependency "test-kitchen", "> 2.2"
   spec.add_dependency "kitchen-ec2"
   spec.add_dependency "deepsort"
 
   # For ed25519 keys
-  spec.add_dependency "rbnacl", ">= 3.2", "< 5.0"
-  spec.add_dependency "rbnacl-libsodium"
-  spec.add_dependency "bcrypt_pbkdf", ">= 1.0", "< 2.0"
+  spec.add_dependency "ed25519"
+  spec.add_dependency "bcrypt_pbkdf"
 
   spec.add_development_dependency "rake"
 end
