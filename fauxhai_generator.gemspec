@@ -30,6 +30,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rbnacl-libsodium"
   spec.add_dependency "bcrypt_pbkdf", ">= 1.0", "< 2.0"
 
-  spec.add_development_dependency "bundler", "~> 1.16"
+  spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
 end
