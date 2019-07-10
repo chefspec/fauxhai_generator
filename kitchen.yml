@@ -14,9 +14,7 @@ suites:
 
 # note many of these AMIs require product subscriptions in AWS. you'll need to try to launch the same AMI via the GUI so you can agree to the subscription nonsense
 platforms:
-  - name: amazon2-2018
-  # don't add previous amazon releases as they're not supported by omnitruck as of 12.2018
-  - name: amazon-2014.09
+  - name: amazon2
   - name: amazon-2015.03
   - name: amazon-2015.09
   - name: amazon-2016.03
