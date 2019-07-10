@@ -1,6 +1,7 @@
 driver:
   name: ec2
   region: us-east-1
+  shared_credentials_profile: 'chef-engineering' # you'll want to comment this out if you don't work for chef
   chef_license: "accept-no-persist"
 
 provisioner:
