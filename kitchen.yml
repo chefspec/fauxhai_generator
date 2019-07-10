@@ -1,6 +1,7 @@
 driver:
   name: ec2
   region: us-east-1
+  chef_license: "accept-no-persist"
 
 provisioner:
   name: fauxhai
