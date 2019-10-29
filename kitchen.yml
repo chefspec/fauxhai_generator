@@ -51,16 +51,12 @@ platforms:
   - name: debian-9.9
     driver:
       image_id: ami-05a71a55586ac5d38
-  - name: sles-11.4
+  - name: debian-9.11
     driver:
-      image_id: ami-3881d042
-    transport:
-      username: ec2-user
-  - name: sles-12.1
+      image_id: ami-05f27d4d6770a43d2
+  - name: debian-10 # we don't do individual releases on Debian 10
     driver:
-      image_id: ami-166efc01
-    transport:
-      username: ec2-user
+      image_id: ami-0ebe79fe05191a436
   - name: sles-12.2
     driver:
       image_id: ami-2ad5fd3c
@@ -71,35 +67,49 @@ platforms:
       image_id: ami-3c062943
     transport:
       username: ec2-user
-  - name: opensuse-42.2
+  - name: sles-12.4
     driver:
-      image_id: ami-b5314da3
+      image_id: ami-0b85dec54588aa1e7
     transport:
       username: ec2-user
-  - name: opensuse-42.3
+  - name: sles-15 # we don't do individual releases on SLES 15.x
     driver:
-      image_id: ami-5eaf8124
+      image_id: ami-0547b1fd62b28a111
     transport:
       username: ec2-user
-  - name: oracle-6.8
+  - name: opensuse-15.0
     driver:
-      image_id: ami-f1a2998a
+      image_id: ami-072678a86b8ca6f30
+    transport:
+      username: ec2-user
+  - name: opensuse-15.1
+    driver:
+      image_id: ami-05120304eb067176e
+    transport:
+      username: ec2-user
+  - name: oracle-6.10
+    driver:
+      image_id: ami-00c92da8464cd495b
     transport:
       username: clckwrk
-  - name: oracle-7.2
+  - name: oracle-7.5
     driver:
-      image_id: ami-73a29908
-    transport:
-      username: clckwrk
-  - name: oracle-7.3
-    driver:
-      image_id: ami-2ea29955
+      image_id: ami-045e7461529d741a2
     transport:
       username: ec2-user
     transport:
       username: clckwrk
-  - name: oracle-7.4
+  - name: oracle-7.6
     driver:
-      image_id: ami-0c9c8d77
+      image_id: ami-045e7461529d741a2
     transport:
       username: clckwrk
+  - name: freebsd-10.4
+    driver:
+      image_id: ami-7082790a
+  - name: freebsd-11.3
+    driver:
+      image_id: ami-0f54e7d3c3e9f6aa5
+  - name: freebsd-12.0
+    driver:
+      image_id: ami-00e61b69944d5d2a3
