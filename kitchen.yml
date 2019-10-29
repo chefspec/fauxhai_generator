@@ -45,18 +45,6 @@ platforms:
   - name: centos-7.5
     driver:
       image_id: ami-00f7c900d2e7133e1
-  - name: debian-9.2
-    driver:
-      image_id: ami-71b7750b
-  - name: debian-9.3
-    driver:
-      image_id: ami-0dc82b70
-  - name: debian-9.4
-    driver:
-      image_id: ami-8c9bdaf3
-  - name: debian-9.5
-    driver:
-      image_id: ami-b4bfa7cb
   - name: debian-9.8
     driver:
       image_id: ami-0f9e7e8867f55fd8e
