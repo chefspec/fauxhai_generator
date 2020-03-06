@@ -35,12 +35,7 @@ module Kitchen
       end
 
       def init_command
-        base_cmd = if windows_os?
-          raise "todo"
-        else
-          "/opt/chef/embedded/bin/gem install fauxhai --no-document"
-        end
-        prefix_command(wrap_shell_code(sudo(base_cmd)))
+        # nothing to do
       end
 
       def run_command
