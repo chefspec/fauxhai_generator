@@ -17,17 +17,13 @@ suites:
 # note many of these AMIs require product subscriptions in AWS. you'll need to try to launch the same AMI via the GUI so you can agree to the subscription nonsense
 platforms:
   - name: amazon2
-  - name: amazon-2015.03
-  - name: amazon-2015.09
   - name: amazon-2016.03
   - name: amazon-2016.09
   - name: amazon-2017.03
   - name: amazon-2017.09
   - name: amazon-2018.03
-  - name: fedora-29
   - name: fedora-30
   - name: fedora-31
-  - name: rhel-6.8
   - name: rhel-6.9
   - name: rhel-6.10
     transport:
