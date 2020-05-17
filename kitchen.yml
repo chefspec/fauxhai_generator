@@ -24,6 +24,7 @@ platforms:
   - name: amazon-2018.03
   - name: fedora-30
   - name: fedora-31
+  - name: fedora-32
   - name: rhel-6.9
   - name: rhel-6.10
     transport:
@@ -32,7 +33,10 @@ platforms:
   - name: rhel-7.5
   - name: rhel-7.6
   - name: rhel-7.7
-  - name: rhel-8.0 # keep in mind we don't do individual releases on RHEL 15.x
+  - name: rhel-7.8
+  - name: rhel-8 # we don't do individual releases on RHEL 8.x
+    driver:
+      image_id: ami-098f16afa9edf40be
   - name: ubuntu-16.04
   - name: ubuntu-18.04
   - name: ubuntu-20.04
@@ -46,7 +50,10 @@ platforms:
   - name: centos-7.7
     driver:
       image_id: ami-09a0182848588615f
-  - name: centos-8
+  - name: centos-7.8
+    driver:
+      image_id: ami-0affd4508a5d2481b
+  - name: centos-8 # we don't do individual releases on centos 8.x
     driver:
       image_id: ami-00594b9c138e6303d
     transport:
@@ -62,7 +69,7 @@ platforms:
       image_id: ami-05f27d4d6770a43d2
   - name: debian-10 # we don't do individual releases on Debian 10
     driver:
-      image_id: ami-0ebe79fe05191a436
+      image_id: ami-0b9a611a02047d3b1
   - name: sles-12.3
     driver:
       image_id: ami-3c062943
@@ -71,6 +78,11 @@ platforms:
   - name: sles-12.4
     driver:
       image_id: ami-0b85dec54588aa1e7
+    transport:
+      username: ec2-user
+  - name: sles-12.5
+    driver:
+      image_id: ami-095d73d5068ebbc22
     transport:
       username: ec2-user
   - name: sles-15 # we don't do individual releases on SLES 15.x
