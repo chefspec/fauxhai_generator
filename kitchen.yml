@@ -50,9 +50,9 @@ platforms:
   - name: centos-7.7
     driver:
       image_id: ami-0affd4508a5d2481b
-  - name: centos-8 # we don't do individual releases on centos 8.x
+  - name: centos-8 # we don't do individual releases on centos 8.x. Just update the AMI from https://wiki.centos.org/Cloud/AWS
     driver:
-      image_id: ami-00594b9c138e6303d
+      image_id:  ami-0c7ec43a152e9c107
     transport:
       username: centos
   - name: debian-9.8
@@ -64,14 +64,12 @@ platforms:
   - name: debian-9.11
     driver:
       image_id: ami-05f27d4d6770a43d2
+  - name: debian-9.12 # requires subscription: https://aws.amazon.com/marketplace/pp/B073HW9SP3?ref_=srh_res_product_title
+    driver:
+      image_id: ami-036a39e18acee620f
   - name: debian-10 # we don't do individual releases on Debian 10
     driver:
       image_id: ami-0b9a611a02047d3b1
-  - name: sles-12.3
-    driver:
-      image_id: ami-3c062943
-    transport:
-      username: ec2-user
   - name: sles-12.4
     driver:
       image_id: ami-0b85dec54588aa1e7
@@ -84,7 +82,7 @@ platforms:
       username: ec2-user
   - name: sles-15 # we don't do individual releases on SLES 15.x
     driver:
-      image_id: ami-0547b1fd62b28a111
+      image_id: ami-0068cd63259e9f24c
     transport:
       username: ec2-user
   - name: opensuse-15.0
@@ -97,21 +95,21 @@ platforms:
       image_id: ami-05120304eb067176e
     transport:
       username: ec2-user
-  - name: oracle-6.10
+  - name: oracle-6.10 # subscription required: https://aws.amazon.com/marketplace/pp/B07LFKN62H?ref_=srh_res_product_title
     driver:
       image_id: ami-00c92da8464cd495b
     transport:
       username: clckwrk
-  - name: oracle-7.5
+  - name: oracle-7.5 # subscription required: https://aws.amazon.com/marketplace/pp/B07LF8VT53?ref_=srh_res_product_title
     driver:
-      image_id: ami-045e7461529d741a2
+      image_id: ami-07c01e9c456de28d8
     transport:
       username: ec2-user
     transport:
       username: clckwrk
-  - name: oracle-7.6
+  - name: oracle-7.6 # subscription required: https://aws.amazon.com/marketplace/pp/B07LFJSTDG?ref_=srh_res_product_title
     driver:
-      image_id: ami-045e7461529d741a2
+      image_id: ami-0737530433c4f7585
     transport:
       username: clckwrk
   - name: freebsd-10.4
@@ -120,6 +118,9 @@ platforms:
   - name: freebsd-11.3
     driver:
       image_id: ami-0f54e7d3c3e9f6aa5
-  - name: freebsd-12.0
+  - name: freebsd-12.0 # subscription required: https://aws.amazon.com/marketplace/server/configuration?productId=f5af2713-6d84-41f0-95ea-2eaee78f2af4&ref_=psb_cfg_continue
     driver:
       image_id: ami-00e61b69944d5d2a3
+  - name: freebsd-12.1 # subscription required: https://aws.amazon.com/marketplace/server/configuration?productId=f5af2713-6d84-41f0-95ea-2eaee78f2af4&ref_=psb_cfg_continue
+    driver:
+      image_id: ami-034de978f5d9c9b1b
