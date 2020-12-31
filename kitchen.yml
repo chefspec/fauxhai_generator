@@ -37,12 +37,6 @@ platforms:
   - name: ubuntu-18.04
   - name: ubuntu-20.04
   - name: centos-6.10
-  - name: centos-7.5
-    driver:
-      image_id: ami-00f7c900d2e7133e1
-  - name: centos-7.6
-    driver:
-      image_id: ami-0538a0e5ee403b8b4
   - name: centos-7.7
     driver:
       image_id: ami-0affd4508a5d2481b
