@@ -48,21 +48,18 @@ platforms:
       image_id: ami-05ca751716e10fe16
     transport:
       username: centos
-  - name: debian-9.8
-    driver:
-      image_id: ami-0f9e7e8867f55fd8e
-  - name: debian-9.9
-    driver:
-      image_id: ami-05a71a55586ac5d38
   - name: debian-9.11
     driver:
       image_id: ami-05f27d4d6770a43d2
-  - name: debian-9.12 # requires subscription: https://aws.amazon.com/marketplace/pp/B073HW9SP3?ref_=srh_res_product_title
+  - name: debian-9.12
     driver:
-      image_id: ami-036a39e18acee620f
+      image_id: ami-0160ecff219fbfd98
+  - name: debian-9.13
+    driver:
+      image_id: ami-08abeb85313dba709
   - name: debian-10 # we don't do individual releases on Debian 10
     driver:
-      image_id: ami-0b9a611a02047d3b1
+      image_id: ami-09da9778
   - name: sles-12.4
     driver:
       image_id: ami-0b85dec54588aa1e7
