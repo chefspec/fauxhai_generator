@@ -107,9 +107,6 @@ platforms:
       image_id: ami-0737530433c4f7585
     transport:
       username: clckwrk
-  - name: freebsd-10.4
-    driver:
-      image_id: ami-7082790a
   - name: freebsd-11.3
     driver:
       image_id: ami-0f54e7d3c3e9f6aa5
