@@ -82,6 +82,11 @@ platforms:
       image_id: ami-05120304eb067176e
     transport:
       username: ec2-user
+  - name: opensuse-15.2 # subscription required: https://aws.amazon.com/marketplace/server/procurement?productId=548f7b74-f1d6-437e-b650-f6315f6d8aa3
+    driver:
+      image_id: ami-0bca7ba1324ed1047
+    transport:
+      username: ec2-user
   - name: oracle-6.10 # subscription required: https://aws.amazon.com/marketplace/pp/B07LFKN62H?ref_=srh_res_product_title
     driver:
       image_id: ami-00c92da8464cd495b
