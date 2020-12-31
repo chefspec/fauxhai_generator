@@ -18,9 +18,8 @@ suites:
 platforms:
   - name: amazon2
   - name: amazon-2018.03
-  - name: fedora-30
-  - name: fedora-31
   - name: fedora-32
+  - name: fedora-33
   - name: rhel-6.9
   - name: rhel-6.10
     transport:
