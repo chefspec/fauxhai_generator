@@ -37,6 +37,12 @@ platforms:
   - name: centos-7.7
     driver:
       image_id: ami-0affd4508a5d2481b
+  - name: centos-7.8
+    driver:
+      image_id: ami-06cf02a98a61f9f5e
+  - name: centos-7.9
+    driver:
+      image_id: ami-00e87074e52e6c9f9
   - name: centos-8 # we don't do individual releases on centos 8.x. Just update the AMI from https://wiki.centos.org/Cloud/AWS
     driver:
       image_id:  ami-0c7ec43a152e9c107
