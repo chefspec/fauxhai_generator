@@ -56,10 +56,10 @@ platforms:
       image_id: ami-0160ecff219fbfd98
   - name: debian-9.13
     driver:
-      image_id: ami-08abeb85313dba709
+      image_id: ami-0f79612a4eb759970
   - name: debian-10 # we don't do individual releases on Debian 10
     driver:
-      image_id: ami-09da9778
+      image_id: ami-00bc4a48c20aeae77
   - name: sles-12.4
     driver:
       image_id: ami-0b85dec54588aa1e7
