@@ -1,4 +1,3 @@
-# -*- encoding: utf-8 -*-
 #
 # Author:: Noah Kantrowitz <noah@coderanger.net>
 #
@@ -24,9 +23,9 @@ module Kitchen
     class Fauxhai < ChefBase
       default_config :downloads do |provisioner|
         if provisioner.windows_os?
-          raise "todo"
+          { "%USERPROFILE%\AppData\Local\Temp\fauxhai" => "#{provisioner[:kitchen_root]}/_out/#{provisioner.instance.platform.name}.json" }
         else
-          {"/tmp/fauxhai" => "#{provisioner[:kitchen_root]}/_out/#{provisioner.instance.platform.name}.json"}
+          { "/tmp/fauxhai" => "#{provisioner[:kitchen_root]}/_out/#{provisioner.instance.platform.name}.json" }
         end
       end
 
@@ -40,10 +39,10 @@ module Kitchen
 
       def run_command
         base_cmd = if windows_os?
-          raise "todo"
-        else
-          "/opt/chef/embedded/bin/fauxhai | tee /tmp/fauxhai"
-        end
+                     "C:\\opscode\\chef\\embedded\\bin\\fauxhai > %USERPROFILE%\\AppData\\Local\\Temp\\fauxhai"
+                   else
+                     "/opt/chef/embedded/bin/fauxhai | tee /tmp/fauxhai"
+                   end
         prefix_command(wrap_shell_code(sudo(base_cmd)))
       end
     end
